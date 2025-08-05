@@ -1,6 +1,7 @@
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/PricingCalcApplication.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/controllers/ComputeController.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/controllers/HomeController.java
+/home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/controllers/InstanceController.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/controllers/RegionController.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/controllers/ResourceController.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/models/InstanceType.java
@@ -10,8 +11,10 @@
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/models/ResourcesType.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/repo/InstanceTypeRepo.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/repo/RegionRepo.java
+/home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/repo/ResourceNameRepo.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/repo/ResourceTypeRepo.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/service/ComputeService.java
+/home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/service/InstanceTypeService.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/service/RegionService.java
-/home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/service/ResourceNameRepo.java
+/home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/service/ResourceNameService.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/service/ResourceTypeService.java

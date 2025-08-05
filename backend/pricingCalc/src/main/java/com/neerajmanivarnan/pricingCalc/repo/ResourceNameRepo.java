@@ -6,11 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.neerajmanivarnan.pricingCalc.models.ResourceName;
-import com.neerajmanivarnan.pricingCalc.models.ResourcesType;
 
 @Repository
-public interface ResourceTypeRepo extends JpaRepository<ResourcesType,Long> {
+public interface ResourceNameRepo extends JpaRepository<ResourceName,Long>{
 
-    List<ResourceName> findByResourceTypeName(String currentSelectedResourceType);
-    
-} 
+    List<ResourceName> findByTypeName(String currentSelectedResourceType);
+
+}

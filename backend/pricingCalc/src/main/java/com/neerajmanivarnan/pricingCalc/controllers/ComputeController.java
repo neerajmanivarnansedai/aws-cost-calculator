@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.neerajmanivarnan.pricingCalc.models.RequestFromUser;
 import com.neerajmanivarnan.pricingCalc.service.ComputeService;
 
-@RestController
-@CrossOrigin(origins = "*")
 @RequestMapping("compute")
+@CrossOrigin(origins = "*")
+@RestController
 public class ComputeController {
   
     @Autowired

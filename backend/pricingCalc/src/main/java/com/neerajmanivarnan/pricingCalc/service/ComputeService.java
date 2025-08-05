@@ -20,13 +20,20 @@ public class ComputeService {
     RegionRepo regionRepo;
 
     public Double computeTheCost(RequestFromUser request) {
-        RegionNames region = regionRepo.findByRegionCode(request.getRegionCode().getRegionCode());
+        // RegionNames region = regionRepo.findByRegionCode(request.getRegionCode().getRegionCode());
 
-        if (region == null){
-            throw new RuntimeException("Region code not found : "+request.getRegionCode());
-        }
+        // if (region == null){
+        //     throw new IllegalArgumentException("Region code not found : "+request.getRegionCode());
+        // }
 
-        InstanceType typeInDb = iRepo.findByTypeNameAndResourceNameAndInstanceTypeAndRegionCode(request.getTypeName(),request.getResourceName(),request.getInstanceType(),region);
+        InstanceType typeInDb = iRepo.findByDetails(request.getInstanceType(),request.getResourceName(),request.getTypeName(),request.getRegionCode().getRegionCode());
+
+        // if (typeInDb == null) {
+        //     return 0.08;
+        // }
+
+        
+        // InstanceType typeInDb = iRepo.findByTypeNameAndResourceNameAndInstanceTypeAndRegionCode(request.getTypeName(),request.getResourceName(),request.getInstanceType(),region);
         int numberOfInstances = request.getNumberOfUnits();
         double totalCostPerHour = typeInDb.getPricePerHour();
         Double totalCost = totalCostPerHour * numberOfInstances * 720;
@@ -36,6 +43,7 @@ public class ComputeService {
 
 }
 
+// InstanceType findByDetails(@Param("instanceType") String instanceType,@Param("resourceName") String resourceName,@Param("typeName") String typeName,@Param("regionCode") String regionCode);
     // String resourceType;
     // String resourceName;
     // int numberOfUnits;

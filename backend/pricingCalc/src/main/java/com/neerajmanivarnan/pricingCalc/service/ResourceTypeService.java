@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.neerajmanivarnan.pricingCalc.models.ResourceName;
 import com.neerajmanivarnan.pricingCalc.models.ResourcesType;
+import com.neerajmanivarnan.pricingCalc.repo.ResourceNameRepo;
 import com.neerajmanivarnan.pricingCalc.repo.ResourceTypeRepo;
 
 @Service
@@ -24,5 +25,9 @@ public class ResourceTypeService {
    
     public List<ResourceName> getAllResourceNames(){
         return rName.findAll();
+    }
+
+    public List<ResourceName> getResourceNameBySelected(String currentSelectedResourceType) {
+        return rRepo.findByResourceTypeName(currentSelectedResourceType);
     }
 }
