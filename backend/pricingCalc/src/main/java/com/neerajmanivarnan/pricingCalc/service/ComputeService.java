@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.neerajmanivarnan.pricingCalc.models.InstanceType;
 import com.neerajmanivarnan.pricingCalc.models.RegionNames;
 import com.neerajmanivarnan.pricingCalc.models.RequestFromUser;
+import com.neerajmanivarnan.pricingCalc.models.Response;
 import com.neerajmanivarnan.pricingCalc.repo.InstanceTypeRepo;
 import com.neerajmanivarnan.pricingCalc.repo.RegionRepo;
 
@@ -19,7 +20,7 @@ public class ComputeService {
     @Autowired
     RegionRepo regionRepo;
 
-    public Double computeTheCost(RequestFromUser request) {
+    public Response computeTheCost(RequestFromUser request) {
         // RegionNames region = regionRepo.findByRegionCode(request.getRegionCode().getRegionCode());
 
         // if (region == null){
@@ -37,8 +38,9 @@ public class ComputeService {
         int numberOfInstances = request.getNumberOfUnits();
         double totalCostPerHour = typeInDb.getPricePerHour();
         Double totalCost = totalCostPerHour * numberOfInstances * 720;
-
-        return totalCost;
+        Response result = new Response();
+        result.setTotalCost(totalCost);
+        return result;
     }
 
 }

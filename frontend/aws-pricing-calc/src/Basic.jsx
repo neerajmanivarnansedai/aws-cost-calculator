@@ -89,7 +89,7 @@ const Basic = () => {
 
     // Fetches Region Names whenever Instance Type changes
     useEffect(() => {
-        if (!currentSelectedResourceName) return;
+        if (!currentSelectedInstanceType) return;
         const fetchRegionNames = async () => {
             setLoading(true);
             try {
@@ -109,7 +109,7 @@ const Basic = () => {
             }
         };
         fetchRegionNames();
-    }, [currentSelectedResourceName]);
+    }, [currentSelectedInstanceType]);
 
     // Function to handle form submission and API call
 //     const handleSubmit = async (values, { setSubmitting }) => {
@@ -147,6 +147,9 @@ const Basic = () => {
     const handleSubmit = async (values, { setSubmitting }) => {
         setLoading(true);
         setMessage('');
+
+        console.log("Reached handle submit");
+        
         
         const apiUrl = 'http://localhost:8080/compute/computeCurrentInstance';
 
@@ -200,17 +203,17 @@ const Basic = () => {
                 </h1>
                 <Formik
                     initialValues={{
-                        resourceType: '',
-                        resourceName: '',
-                        instanceType: '',
+                        resourceType: currentSelectedResourceType,
+                        resourceName: currentSelectedResourceName,
+                        instanceType: currentSelectedInstanceType,
                         regionCode: '',
                         numberOfUnits: '',
                     }}
                     enableReinitialize={true}
                     validate={values => {
                         const errors = {};
-                        if (!values.units || values.units <= 0) {
-                            errors.units = 'Number of units must be a positive integer';
+                        if (!values.numberOfUnits || values.numberOfUnits <= 0) {
+                            errors.numberOfUnits = 'Number of units must be a positive integer';
                         }
                         return errors;
                     }}
@@ -218,7 +221,7 @@ const Basic = () => {
                 > 
 
 
-                    {({ values, isSubmitting, setFieldValue }) => (
+                    {({  isSubmitting, setFieldValue }) => (
                         <Form className="space-y-4">
 
                             {/* Resource Type Dropdown */}
@@ -231,8 +234,8 @@ const Basic = () => {
                                     name="resourceType"
                                     className="mt-1 text-black block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                     onChange={e => {
-                                        setFieldValue('resourceType', e.target.value);
                                         setCurrentSelectedResourceType(e.target.value);
+                                        setFieldValue('resourceType', e.target.value);
                                     }}
                                     value={currentSelectedResourceType}
                                 >
@@ -249,16 +252,16 @@ const Basic = () => {
 
                             {/* Resource Dropdown */}
                             <div>
-                                <label htmlFor="resource" className="block text-sm font-medium text-gray-700">
+                                <label htmlFor="resourceName" className="block text-sm font-medium text-gray-700">
                                     Resource name
                                 </label>
                                 <Field
                                     as="select"
-                                    name="resource"
+                                    name="resourceName"
                                     className="mt-1 text-black block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                     onChange={e => {
-                                        setFieldValue('resource', e.target.value);
                                         setCurrentSelectedResourceName(e.target.value);
+                                        setFieldValue('resourceName', e.target.value);
                                     }}
                                     value={currentSelectedResourceName}
                                 >
@@ -275,16 +278,16 @@ const Basic = () => {
                             
                             {/* Instance Type Dropdown */}
                             <div>
-                                <label htmlFor="instance" className="block text-sm font-medium text-gray-700">
+                                <label htmlFor="instanceType" className="block text-sm font-medium text-gray-700">
                                     Instance Type
                                 </label>
                                 <Field
                                     as="select"
-                                    name="instance"
+                                    name="instanceType"
                                     className="mt-1 text-black block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                     onChange={e => {
-                                        setFieldValue('instance', e.target.value);
                                         setCurrentSelectedInstanceType(e.target.value);
+                                        setFieldValue('instanceType', e.target.value);
                                     }}
                                     value={currentSelectedInstanceType}
                                 >
@@ -293,7 +296,6 @@ const Basic = () => {
                                     ) : (
                                       <>
                                         <option value="" disabled>Select an instance type</option>
-{/*                                         {renderOptions(instanceTypes, 'id', 'instanceType')} */}
 
                                                 {instanceTypes.map((region, index) => (
                                                     <option key={index} value={region}>
@@ -307,15 +309,15 @@ const Basic = () => {
 
                             {/* Region Dropdown */}
                             <div>
-                                <label htmlFor="region" className="block text-sm font-medium text-gray-700">
+                                <label htmlFor="regionCode" className="block text-sm font-medium text-gray-700">
                                     Region
                                 </label>
                                 <Field
                                     as="select"
-                                    name="region"
+                                    name="regionCode"
                                     className="mt-1 text-black block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                     onChange={e => {
-                                        setFieldValue('region', e.target.value);
+                                        setFieldValue('regionCode', e.target.value);
                                     }}
                                     value={regionNames.length > 0 ? regionNames[0].regionName : ''}
                                 >
@@ -324,7 +326,6 @@ const Basic = () => {
                                     ) : (
                                       <>
                                         <option value="" className='bg-black text-blue' disabled>Select a region</option>
-{/*                                         {renderOptions(regionNames, 'id', 'regionName')} */}
                                                 {regionNames.map((region, index) => (
                                                     <option key={index} value={region}>
                                                         {region}
@@ -337,16 +338,16 @@ const Basic = () => {
 
                             {/* Units Input Field */}
                             <div>
-                                <label htmlFor="units" className="block text-sm font-medium text-gray-700">
+                                <label htmlFor="numberOfUnits" className="block text-sm font-medium text-gray-700">
                                     Number of Units (e.g., hours)
                                 </label>
                                 <Field
                                     type="number"
-                                    name="units"
+                                    name="numberOfUnits"
                                     min="1"
                                     className="mt-1 text-black block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                 />
-                                <ErrorMessage name="units" component="div" className="mt-1 text-red-500 text-xs" />
+                                <ErrorMessage name="numberOfUnits" component="div" className="mt-1 text-red-500 text-xs" />
                             </div>
 
                             <button

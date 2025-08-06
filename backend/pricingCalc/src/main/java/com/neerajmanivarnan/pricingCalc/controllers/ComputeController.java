@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.neerajmanivarnan.pricingCalc.models.RequestFromUser;
+import com.neerajmanivarnan.pricingCalc.models.Response;
 import com.neerajmanivarnan.pricingCalc.service.ComputeService;
 
 @RequestMapping("compute")
@@ -19,7 +20,7 @@ public class ComputeController {
     ComputeService computeService;
 
     @PostMapping("computeCurrentInstance")
-    public Double computeTheTotalCost(@RequestBody RequestFromUser request){
+    public Response computeTheTotalCost(@RequestBody RequestFromUser request){
         return computeService.computeTheCost(request);
     }
 }

@@ -9,6 +9,7 @@
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/models/RequestFromUser.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/models/ResourceName.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/models/ResourcesType.java
+/home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/models/Response.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/repo/InstanceTypeRepo.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/repo/RegionRepo.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/repo/ResourceNameRepo.java

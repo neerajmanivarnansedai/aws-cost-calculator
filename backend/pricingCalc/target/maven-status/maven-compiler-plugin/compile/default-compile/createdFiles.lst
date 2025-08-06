@@ -9,6 +9,7 @@ com/neerajmanivarnan/pricingCalc/repo/ResourceTypeRepo.class
 com/neerajmanivarnan/pricingCalc/repo/ResourceNameRepo.class
 com/neerajmanivarnan/pricingCalc/service/InstanceTypeService.class
 com/neerajmanivarnan/pricingCalc/service/RegionService.class
+com/neerajmanivarnan/pricingCalc/models/Response.class
 com/neerajmanivarnan/pricingCalc/models/ResourceName.class
 com/neerajmanivarnan/pricingCalc/models/RequestFromUser.class
 com/neerajmanivarnan/pricingCalc/controllers/RegionController.class
