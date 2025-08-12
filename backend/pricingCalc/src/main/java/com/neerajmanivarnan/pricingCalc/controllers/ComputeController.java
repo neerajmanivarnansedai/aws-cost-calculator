@@ -1,5 +1,6 @@
 package com.neerajmanivarnan.pricingCalc.controllers;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +21,7 @@ public class ComputeController {
     ComputeService computeService;
 
     @PostMapping("computeCurrentInstance")
-    public Response computeTheTotalCost(@RequestBody RequestFromUser request){
+    public Response computeTheTotalCost(@Valid @RequestBody RequestFromUser request){
         return computeService.computeTheCost(request);
     }
 }

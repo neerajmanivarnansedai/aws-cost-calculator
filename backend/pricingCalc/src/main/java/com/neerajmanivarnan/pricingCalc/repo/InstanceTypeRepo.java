@@ -26,8 +26,9 @@ public interface InstanceTypeRepo extends JpaRepository<InstanceType,Long>{
                    "    SELECT it.region_name " +
                    "    FROM instance_type it " +
                    "    WHERE it.resource_name = :selectedResourceName" +
+                   " AND it.instance_type = :selectedInstanceType" +
                    ")", nativeQuery = true)
-    List<String> findRegionCodesBySelectedResourceName(@Param("selectedResourceName") String selectedResourceName);
+    List<String> findRegionCodesBySelectedResourceName(@Param("selectedResourceName") String selectedResourceName, @Param("selectedInstanceType") String selectedInstanceType);
 
 
       @Query("select it.instanceType from InstanceType it where it.resourceName = :resourceName")

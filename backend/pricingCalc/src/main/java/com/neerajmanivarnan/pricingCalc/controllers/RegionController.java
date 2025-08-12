@@ -30,9 +30,9 @@ public class RegionController {
         return rService.getAllRegions(); 
    }
 
-   @GetMapping("/getregionByResource/{selectedResourceName}")
-   public List<String> getAllRegionsForeignKey(@PathVariable String selectedResourceName){
-     return iService.findRegionCodeBySelectedResourceName(selectedResourceName);
+   @GetMapping("/getregionByResource/{selectedResourceName}/{selectedInstanceType}")
+   public List<String> getAllRegionsForeignKey(@PathVariable String selectedResourceName,@PathVariable String selectedInstanceType){
+     return iService.findRegionCodeBySelectedResourceName(selectedResourceName,selectedInstanceType);
 
    }
 }

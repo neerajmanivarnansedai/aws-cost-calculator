@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.neerajmanivarnan.pricingCalc.models.InstanceType;
-import com.neerajmanivarnan.pricingCalc.models.RegionNames;
 import com.neerajmanivarnan.pricingCalc.models.RequestFromUser;
 import com.neerajmanivarnan.pricingCalc.models.Response;
 import com.neerajmanivarnan.pricingCalc.repo.InstanceTypeRepo;
