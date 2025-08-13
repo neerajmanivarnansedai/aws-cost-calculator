@@ -1,3 +1,4 @@
+com/neerajmanivarnan/config/CorsConfig$1.class
 com/neerajmanivarnan/pricingCalc/service/ResourceNameService.class
 com/neerajmanivarnan/pricingCalc/models/InstanceType.class
 com/neerajmanivarnan/pricingCalc/controllers/ComputeController.class
@@ -18,6 +19,7 @@ com/neerajmanivarnan/pricingCalc/models/ResourcesType.class
 com/neerajmanivarnan/pricingCalc/models/OrderHistory.class
 com/neerajmanivarnan/pricingCalc/repo/ResourceTypeRepo.class
 com/neerajmanivarnan/pricingCalc/service/InstanceTypeService.class
+com/neerajmanivarnan/config/CorsConfig.class
 com/neerajmanivarnan/pricingCalc/service/RegionService.class
 com/neerajmanivarnan/pricingCalc/models/ResourceName.class
 com/neerajmanivarnan/pricingCalc/controllers/RegionController.class

@@ -402,9 +402,27 @@ const handleChange = (e) => {
 
                 <div className='flex justify-end bg-slate-700'>
                   <button className='bg-amber-500 text-cyan-950 font-bold hover:cursor-pointer hover:bg-orange-500 transition duration-300 transition-all p-3 rounded-4xl'
-                  onClick={() => {
-                      alert(JSON.stringify(currentSelectedItems,null,2))
-                  }} 
+                  onClick={async () => {
+                    try {
+                      const response = await fetch(
+                        "http://localhost:8080/api/orders/postAnOrder",
+                        {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify(currentSelectedItems),
+                        }
+                      );
+
+                      if (!response.ok) {
+                        throw new Error("Failed to post data");
+                      }
+
+                      const data = await response.json();
+                      console.log("Order posted successfully:", data);
+                    } catch (err) {
+                      console.error("Error posting order:", err);
+                    }
+                  }}
                   >Confirm Order</button>
                 </div>
             </div>

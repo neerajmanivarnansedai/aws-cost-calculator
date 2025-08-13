@@ -1,3 +1,4 @@
+/home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/config/CorsConfig.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/PricingCalcApplication.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/controllers/ComputeController.java
 /home/neerajmanivarnan/Sedai-workspace/assignment-1/backend/pricingCalc/src/main/java/com/neerajmanivarnan/pricingCalc/controllers/HomeController.java

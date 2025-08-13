@@ -17,6 +17,7 @@ public class OrderHistory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long Id;
 
+    private String orderIdentifier;
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
     @JoinColumn(name = "order_history_id")
     List<SingleOrder> arrayOfOrders;
