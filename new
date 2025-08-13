@@ -1,7 +1,0 @@
-aws iam list-users
-aws sts get-caller-identity
-aws lambda list-functions
-aws iam list-attached-role-policies --user-name service-account-neeraj
-aws lambda list-functions
-aws iam list-attached-user-policies --user-name service-account-neeraj 
-aws iam  list-policies --query "Policies[?PolicyName=='sedai-autonomous-policy']"

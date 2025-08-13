@@ -401,7 +401,7 @@ const handleChange = (e) => {
               </table>
 
                 <div className='flex justify-end bg-slate-700'>
-                  <button className='bg-amber-500 text-cyan-950 font-bold hover:cursor-pointer hover:bg-orange-500 transition duration-300 transition-all p-3 rounded-4xl'
+                  <button  className='bg-amber-500 text-cyan-950 font-bold hover:cursor-pointer hover:bg-orange-500 transition duration-300 transition-all p-3 rounded-4xl'
                   onClick={async () => {
                     try {
                       const response = await fetch(
